@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 
+import 'homepage_components/main_drawer.dart';
+import 'homepage_components/horizontal_listview.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -25,7 +28,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   Widget imageCarousel = Container(
-    height: 250,
+    height: 220,
     child: Carousel(
       boxFit: BoxFit.cover,
       images: [
@@ -65,87 +68,17 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ],
       ),
-      drawer: Drawer(
-        child: ListView(
-          children: <Widget>[
-//          header
-            UserAccountsDrawerHeader(
-              accountName: Text('Basel Hafiz'),
-              accountEmail: Text('baselhafiz@gmail.com'),
-              currentAccountPicture: GestureDetector(
-                child: CircleAvatar(
-                  backgroundColor: Colors.grey,
-                  child: Icon(Icons.person, color: Colors.white),
-                ),
-              ),
-              decoration: BoxDecoration(color: Colors.redAccent),
-            ),
-//          body
-            InkWell(
-              onTap: () {},
-              child: ListTile(
-                title: Text('Home Page'),
-                leading: Icon(Icons.home),
-                onTap: () {},
-              ),
-            ),
-            InkWell(
-              onTap: () {},
-              child: ListTile(
-                title: Text('My Accounts'),
-                leading: Icon(Icons.person),
-                onTap: () {},
-              ),
-            ),
-            InkWell(
-              onTap: () {},
-              child: ListTile(
-                title: Text('My Orders'),
-                leading: Icon(Icons.shopping_basket),
-                onTap: () {},
-              ),
-            ),
-            InkWell(
-              onTap: () {},
-              child: ListTile(
-                title: Text('Categories'),
-                leading: Icon(Icons.dashboard),
-                onTap: () {},
-              ),
-            ),
-            InkWell(
-              onTap: () {},
-              child: ListTile(
-                title: Text('Favorites'),
-                leading: Icon(Icons.favorite),
-                onTap: () {},
-              ),
-            ),
-            Divider(),
-            InkWell(
-              onTap: () {},
-              child: ListTile(
-                title: Text('Settings'),
-                leading: Icon(Icons.settings, color: Colors.blue),
-                onTap: () {},
-              ),
-            ),
-            InkWell(
-              onTap: () {},
-              child: ListTile(
-                title: Text('About'),
-                leading: Icon(Icons.help, color: Colors.green),
-                onTap: () {},
-              ),
-            )
-          ],
-        ),
-      ),
+      drawer: MainDrawer(),
       body: ListView(
-          children: <Widget>[
-            imageCarousel
-          ],
-        ),
+        children: <Widget>[
+          imageCarousel,
+          Padding(
+            padding: EdgeInsets.all(5),
+            child: Text('Categories', style: TextStyle(fontSize: 15)),
+          ),
+          HorizontalListView(),
+        ],
+      ),
     );
   }
 }

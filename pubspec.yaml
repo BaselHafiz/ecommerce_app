@@ -52,6 +52,13 @@ flutter:
     - assets/m7.jpeg
     - assets/m8.jpeg
     - assets/m9.jpeg
+    - assets/categories/accessories.png
+    - assets/categories/dress.png
+    - assets/categories/formal.png
+    - assets/categories/informal.png
+    - assets/categories/jeans.png
+    - assets/categories/shoe.png
+    - assets/categories/tshirt.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
