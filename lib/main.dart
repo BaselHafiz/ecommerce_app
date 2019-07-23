@@ -3,6 +3,7 @@ import 'package:carousel_pro/carousel_pro.dart';
 
 import 'homepage_components/main_drawer.dart';
 import 'homepage_components/horizontal_listview.dart';
+import 'homepage_components/products_gridview.dart';
 
 void main() {
   runApp(MyApp());
@@ -77,6 +78,11 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Text('Categories', style: TextStyle(fontSize: 15)),
           ),
           HorizontalListView(),
+          Padding(
+            padding: EdgeInsets.all(5),
+            child: Text('Recent Products', style: TextStyle(fontSize: 15)),
+          ),
+          ProductsGridView(),
         ],
       ),
     );

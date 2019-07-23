@@ -59,6 +59,17 @@ flutter:
     - assets/categories/jeans.png
     - assets/categories/shoe.png
     - assets/categories/tshirt.png
+    - assets/products/blazer1.jpeg
+    - assets/products/blazer2.jpeg
+    - assets/products/dress1.jpeg
+    - assets/products/dress2.jpeg
+    - assets/products/hills1.jpeg
+    - assets/products/hills2.jpeg
+    - assets/products/pants1.jpeg
+    - assets/products/pants2.jpeg
+    - assets/products/shoe1.jpeg
+    - assets/products/skt1.jpeg
+    - assets/products/skt2.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

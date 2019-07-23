@@ -1,37 +1,8 @@
 import 'package:flutter/material.dart';
 
-class HorizontalListView extends StatelessWidget {
-  final List<Map<String, String>> categories = [
-    {
-      'categoryImage': 'assets/categories/dress.png',
-      'categoryCaption': 'Dress'
-    },
-    {
-      'categoryImage': 'assets/categories/accessories.png',
-      'categoryCaption': 'Accessories'
-    },
-    {
-      'categoryImage': 'assets/categories/formal.png',
-      'categoryCaption': 'Formal'
-    },
-    {
-      'categoryImage': 'assets/categories/informal.png',
-      'categoryCaption': 'Informal'
-    },
-    {
-      'categoryImage': 'assets/categories/jeans.png',
-      'categoryCaption': 'Jeans'
-    },
-    {
-      'categoryImage': 'assets/categories/tshirt.png',
-      'categoryCaption': 'T-shirt'
-    },
-    {
-      'categoryImage': 'assets/categories/shoe.png',
-      'categoryCaption': 'Shoes',
-    },
-  ];
+import '../global_configs.dart';
 
+class HorizontalListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -63,9 +34,7 @@ Widget _buildCategoryListTile(String categoryImage, String categoryCaption) {
   return Container(
     width: 100,
     child: InkWell(
-      onTap: () {
-        print('$categoryCaption');
-      },
+      onTap: () {},
       child: ListTile(
         title: Image.asset(
           categoryImage,
