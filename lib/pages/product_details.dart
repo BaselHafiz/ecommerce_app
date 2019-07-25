@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import '../homepage_components/products_gridview.dart';
+import '../global_configs.dart';
+import '../main.dart';
 
 class ProductDetails extends StatefulWidget {
   final String productName;
@@ -22,14 +25,17 @@ class _ProductDetailsState extends State<ProductDetails> {
       appBar: AppBar(
         elevation: 0.1,
         backgroundColor: Colors.redAccent,
-        title: Text(widget.productName),
+        title: InkWell(
+            child: Text('Shop App'),
+            onTap: () {
+              Navigator.pushReplacement(context,
+                  MaterialPageRoute(builder: (BuildContext context) {
+                return MyHomePage();
+              }));
+            }),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.search, color: Colors.white),
-            onPressed: () {},
-          ),
-          IconButton(
-            icon: Icon(Icons.shopping_cart),
             onPressed: () {},
           ),
         ],
@@ -48,27 +54,43 @@ class _ProductDetailsState extends State<ProductDetails> {
           Row(
             children: <Widget>[
               Padding(
-                  child: Text('Product name', style: TextStyle(color: Colors.grey),), padding: EdgeInsets.fromLTRB(12, 5, 5, 5)),
-              Padding(child: Text(widget.productName), padding: EdgeInsets.all(5)),
+                  child: Text(
+                    'Product name',
+                    style: TextStyle(color: Colors.grey),
+                  ),
+                  padding: EdgeInsets.fromLTRB(12, 5, 5, 5)),
+              Padding(
+                  child: Text(widget.productName), padding: EdgeInsets.all(5)),
             ],
           ),
-
           Row(
             children: <Widget>[
               Padding(
-                  child: Text('Product brand', style: TextStyle(color: Colors.grey),), padding: EdgeInsets.fromLTRB(12, 5, 5, 5)),
+                  child: Text(
+                    'Product brand',
+                    style: TextStyle(color: Colors.grey),
+                  ),
+                  padding: EdgeInsets.fromLTRB(12, 5, 5, 5)),
               // TODO
               Padding(child: Text('Brand X'), padding: EdgeInsets.all(5)),
             ],
           ),
-
           Row(
             children: <Widget>[
               Padding(
-                  child: Text('Product condition', style: TextStyle(color: Colors.grey),), padding: EdgeInsets.fromLTRB(12, 5, 5, 5)),
+                  child: Text(
+                    'Product condition',
+                    style: TextStyle(color: Colors.grey),
+                  ),
+                  padding: EdgeInsets.fromLTRB(12, 5, 5, 5)),
               // TODO
               Padding(child: Text('Used'), padding: EdgeInsets.all(5)),
             ],
+          ),
+          Divider(),
+          ListTile(
+            title: Text('Similar Products'),
+            subtitle: _buildSimilarProductsPart(),
           ),
         ],
       ),
@@ -235,6 +257,27 @@ class _ProductDetailsState extends State<ProductDetails> {
             ),
           ),
         ),
+      ),
+    );
+  }
+
+  Widget _buildSimilarProductsPart() {
+    return Container(
+      height: 570,
+      child: GridView.builder(
+        itemCount: products.length,
+        gridDelegate:
+            SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+        itemBuilder: (BuildContext context, int index) {
+          return buildProductGridViewItem(
+            '${products[index]['productName']}',
+            '${products[index]['productImage']}',
+            products[index]['productOldPrice'],
+            products[index]['productNewPrice'],
+            context,
+            index,
+          );
+        },
       ),
     );
   }

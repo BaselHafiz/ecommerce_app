@@ -12,13 +12,13 @@ class _ProductsGridViewState extends State<ProductsGridView> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 300,
+      height: 470,
       child: GridView.builder(
         itemCount: products.length,
         gridDelegate:
             SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
         itemBuilder: (BuildContext context, int index) {
-          return _buildProductGridViewItem(
+          return buildProductGridViewItem(
             '${products[index]['productName']}',
             '${products[index]['productImage']}',
             products[index]['productOldPrice'],
@@ -32,7 +32,7 @@ class _ProductsGridViewState extends State<ProductsGridView> {
   }
 }
 
-Widget _buildProductGridViewItem(
+Widget buildProductGridViewItem(
     String productName,
     String productImage,
     int productOldPrice,

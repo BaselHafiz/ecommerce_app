@@ -118,5 +118,6 @@ Widget imageCarousel = Container(
     indicatorBgPadding: 10,
     animationCurve: Curves.fastOutSlowIn,
     animationDuration: Duration(milliseconds: 1000),
+    dotBgColor: Colors.transparent,
   ),
 );
