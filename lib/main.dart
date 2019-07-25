@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:carousel_pro/carousel_pro.dart';
 
 import 'homepage_components/main_drawer.dart';
 import 'homepage_components/horizontal_listview.dart';
 import 'homepage_components/products_gridview.dart';
+import 'global_configs.dart';
 
 void main() {
   runApp(MyApp());
@@ -28,28 +28,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  Widget imageCarousel = Container(
-    height: 220,
-    child: Carousel(
-      boxFit: BoxFit.cover,
-      images: [
-        AssetImage('assets/m1.jpeg'),
-        AssetImage('assets/m2.jpeg'),
-        AssetImage('assets/m3.jpeg'),
-        AssetImage('assets/m4.jpeg'),
-        AssetImage('assets/m5.jpeg'),
-        AssetImage('assets/m6.jpeg'),
-        AssetImage('assets/m7.jpeg'),
-        AssetImage('assets/m8.jpeg'),
-        AssetImage('assets/m9.jpeg'),
-      ],
-      autoplay: true,
-      dotSize: 4,
-      indicatorBgPadding: 10,
-      animationCurve: Curves.fastOutSlowIn,
-      animationDuration: Duration(milliseconds: 1000),
-    ),
-  );
 
   @override
   Widget build(BuildContext context) {

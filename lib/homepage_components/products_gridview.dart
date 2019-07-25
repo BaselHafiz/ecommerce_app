@@ -32,18 +32,27 @@ class _ProductsGridViewState extends State<ProductsGridView> {
   }
 }
 
-Widget _buildProductGridViewItem(String productName, String productImage,
-    int productOldPrice, int productNewPrice, BuildContext context, int productIndex) {
+Widget _buildProductGridViewItem(
+    String productName,
+    String productImage,
+    int productOldPrice,
+    int productNewPrice,
+    BuildContext context,
+    int productIndex) {
   return Card(
     child: Hero(
       tag: productIndex.toString(),
       child: Material(
         child: InkWell(
           onTap: () {
-            print(productIndex);
             Navigator.of(context)
                 .push(MaterialPageRoute(builder: (BuildContext context) {
-              return ProductDetails(productName: productName);
+              return ProductDetails(
+                productName: productName,
+                productImage: productImage,
+                productNewPrice: productNewPrice,
+                productOldPrice: productOldPrice,
+              );
             }));
           },
           child: GridTile(

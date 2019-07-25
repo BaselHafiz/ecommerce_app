@@ -1,3 +1,6 @@
+import 'package:flutter/material.dart';
+import 'package:carousel_pro/carousel_pro.dart';
+
 final List<Map<String, dynamic>> products = [
   {
     'productName': 'Blazer',
@@ -94,3 +97,26 @@ final List<Map<String, String>> categories = [
     'categoryCaption': 'Shoes',
   },
 ];
+
+Widget imageCarousel = Container(
+  height: 220,
+  child: Carousel(
+    boxFit: BoxFit.cover,
+    images: [
+      AssetImage('assets/m1.jpeg'),
+      AssetImage('assets/m2.jpeg'),
+      AssetImage('assets/m3.jpeg'),
+      AssetImage('assets/m4.jpeg'),
+      AssetImage('assets/m5.jpeg'),
+      AssetImage('assets/m6.jpeg'),
+      AssetImage('assets/m7.jpeg'),
+      AssetImage('assets/m8.jpeg'),
+      AssetImage('assets/m9.jpeg'),
+    ],
+    autoplay: false,
+    dotSize: 4,
+    indicatorBgPadding: 10,
+    animationCurve: Curves.fastOutSlowIn,
+    animationDuration: Duration(milliseconds: 1000),
+  ),
+);
