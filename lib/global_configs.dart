@@ -1,6 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 
+final List<Map<String, dynamic>> productsOnCart = [
+  {
+    'productName': 'Blazer',
+    'productImage': 'assets/products/blazer1.jpeg',
+    'productNewPrice': 85,
+    'productSize': 'M',
+    'productColor': 'Red',
+    'productQuantity': 2,
+  },
+  {
+    'productName': 'Dress',
+    'productImage': 'assets/products/dress1.jpeg',
+    'productNewPrice': 110,
+    'productSize': 'S',
+    'productColor': 'Orange',
+    'productQuantity': 1,
+  },
+  {
+    'productName': 'Hills',
+    'productImage': 'assets/products/hills1.jpeg',
+    'productNewPrice': 100,
+    'productSize': 'L',
+    'productColor': 'Black',
+    'productQuantity': 2,
+  },
+];
+
 final List<Map<String, dynamic>> products = [
   {
     'productName': 'Blazer',

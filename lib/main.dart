@@ -4,6 +4,7 @@ import 'homepage_components/main_drawer.dart';
 import 'homepage_components/horizontal_listview.dart';
 import 'homepage_components/products_gridview.dart';
 import 'global_configs.dart';
+import 'pages/shopping_cart.dart';
 
 void main() {
   runApp(MyApp());
@@ -43,7 +44,11 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           IconButton(
             icon: Icon(Icons.shopping_cart),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) {
+                return ShoppingCart();
+              }));
+            },
           ),
         ],
       ),

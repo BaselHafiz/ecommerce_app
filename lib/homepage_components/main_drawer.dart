@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ecommerce_app/pages/shopping_cart.dart';
 
 class MainDrawer extends StatefulWidget {
   @override
@@ -53,7 +54,12 @@ class _MainDrawerState extends State<MainDrawer> {
             child: ListTile(
               title: Text('Shopping Cart'),
               leading: Icon(Icons.shopping_cart, color: Colors.red),
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (BuildContext context) {
+                  return ShoppingCart();
+                }));
+              },
             ),
           ),
           InkWell(
