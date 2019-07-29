@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../homepage_components/products_gridview.dart';
 import '../global_configs.dart';
-import '../main.dart';
+import 'home_page.dart';
 
 class ProductDetails extends StatefulWidget {
   final String productName;
