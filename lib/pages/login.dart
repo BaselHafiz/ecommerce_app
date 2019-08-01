@@ -36,6 +36,7 @@ class _LoginState extends State<Login> {
         setState(() => isLogedin = true);
       }
     });
+
     if (isLogedin) {
       Navigator.pushReplacement(
           context, MaterialPageRoute(builder: (context) => MyHomePage()));

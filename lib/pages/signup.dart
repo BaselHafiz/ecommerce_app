@@ -20,7 +20,7 @@ class _SignUpState extends State<SignUp> {
       TextEditingController();
   TextEditingController _nameTextController = TextEditingController();
 
-  String gender;
+  String gender = 'male';
   String groupValue = 'male';
   bool hidePass = true;
   bool loading = false;
@@ -296,11 +296,11 @@ class _SignUpState extends State<SignUp> {
   valueChanged(e) {
     setState(() {
       if (e == 'male') {
-        groupValue = e;
-        gender = e;
+        groupValue = 'male';
+        gender = 'male';
       } else if (e == 'female') {
-        groupValue = e;
-        gender = e;
+        groupValue = 'female';
+        gender = 'female';
       }
     });
   }

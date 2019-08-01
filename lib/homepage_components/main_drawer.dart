@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ecommerce_app/pages/shopping_cart.dart';
+import '../pages/login.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class MainDrawer extends StatefulWidget {
   @override
@@ -68,6 +70,19 @@ class _MainDrawerState extends State<MainDrawer> {
               title: Text('Favorites'),
               leading: Icon(Icons.favorite, color: Colors.red),
               onTap: () {},
+            ),
+          ),
+          InkWell(
+            onTap: () {},
+            child: ListTile(
+              title: Text('Logout'),
+              leading: Icon(Icons.exit_to_app, color: Colors.red),
+              onTap: () async {
+                await FirebaseAuth.instance.signOut().then((value) {
+                  Navigator.pushReplacement(
+                      context, MaterialPageRoute(builder: (context) => Login()));
+                });
+              },
             ),
           ),
           Divider(),
